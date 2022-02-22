@@ -1986,46 +1986,20 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css"/>
         <link rel="stylesheet" type="text/css" href="./libs/selectra/selectra.min.css"/>
 
-        <!-- <script type="text/javascript" src="./libs/selectra/selectra.min.js"></script> -->
-        <!-- <script type="text/javascript" src="./libs/inputmask.min.js"></script>
+        <script type="text/javascript" src="./libs/selectra/selectra.min.js"></script>
+        <script type="text/javascript" src="./libs/inputmask.min.js"></script>
         <script type="text/javascript" src="./libs/swiper/swiper-bundle.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
         
         <script type="text/javascript" src="./libs/selectra/selectra.min.js"></script>
         <script src="https://api-maps.yandex.ru/2.1/?apikey=28517946-dbf1-42a5-9b36-08632da36a93&lang=ru_RU&" type="text/javascript"></script>
-        <script src="js/main.js"></script> -->
+        <script src="js/main.js"></script>
        
         <script>
-            const body = document.querySelector('.js-body');
-            let ready = false;
-            const sources = [
-                "https://api-maps.yandex.ru/2.1/?apikey=28517946-dbf1-42a5-9b36-08632da36a93&lang=ru_RU&",
-                "./libs/selectra/selectra.min.js",
-                "./libs/inputmask.min.js",
-                "./libs/swiper/swiper-bundle.min.js",
-                "https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js",
-                "js/main.js",
-            ]
             document.addEventListener('DOMContentLoaded', function() {
                 headerScript(this);
-                this.addEventListener('scroll', documentReady)
-                this.addEventListener('click', documentReady)
-                this.addEventListener('touchmove', documentReady)
-                this.addEventListener('mouseover', documentReady)
             })
            
-            function documentReady() {
-                if(ready) return
-                sources.forEach(src=> {
-                    const newElement = document.createElement('script');
-                    newElement.src = src;
-                    // newElement.type = "text/javascript";
-                    body.append(newElement);
-                })
-                
-                ready = true
-            }
-
             function headerScript($this) {
                 const headerBurger = $this.querySelector('.js-header__burger'),
                     headerInner = $this.querySelector('.js-header__inner');
